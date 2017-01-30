@@ -3,7 +3,6 @@ __author__ = 'Nazar Ner'
 from selenium import webdriver
 from fixture.product import Product
 
-
 class Application:
 
     def __init__(self):
