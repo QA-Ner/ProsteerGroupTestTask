@@ -2,10 +2,9 @@ __author__ = 'Nazar Ner'
 
 import time
 
-class ProductHelper:
+class Product:
     def __init__(self, app):
         self.app = app
-
 
     def proceed_to_checkout(self):
         # Proceed to Checkout
@@ -15,12 +14,11 @@ class ProductHelper:
         driver.find_element_by_link_text("Buy without registration").click()
         # Go to Contact Information page
         driver.find_element_by_link_text("Next step").click()
-        time.sleep(1)
 
     def assert_discount(self):
         driver = self.app.driver
         specialprice = driver.find_element_by_css_selector(".product-price.special-price")
-        oldprice = driver.find_element_by_xpath(".//*[@id='product_item_847372']/td[6]/div/div[1]/div/span[1]")
+        oldprice = driver.find_element_by_css_selector("span[data-old-price='']")
         assert specialprice.text < oldprice.text
 
     def go_to_cart_page(self):
@@ -41,3 +39,4 @@ class ProductHelper:
     def find_by_cod(self, productcod):
         driver = self.app.driver
         driver.get(self.app.base_url + '/search/?f=all&q=' + productcod)
+

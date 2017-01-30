@@ -11,3 +11,4 @@ def test_gsm_server(app):
     app.product.go_to_cart_page()
     app.product.assert_discount()
     app.product.proceed_to_checkout()
+

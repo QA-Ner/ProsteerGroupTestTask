@@ -1,7 +1,7 @@
 __author__ = 'Nazar Ner'
 
 from selenium import webdriver
-from fixture.product import ProductHelper
+from fixture.product import Product
 
 
 class Application:
@@ -10,7 +10,8 @@ class Application:
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
         self.base_url = "https://gsmserver.com"
-        self.product = ProductHelper(self)
+        self.product = Product(self)
 
     def destroy(self):
         self.driver.quit()
+
