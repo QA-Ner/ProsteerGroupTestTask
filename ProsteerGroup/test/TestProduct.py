@@ -1,6 +1,5 @@
 __author__ = 'Nazar Ner'
 
-
 def test_gsm_server(app):
     app.product.find_by_cod('847372')
     app.product.add_to_cart()
