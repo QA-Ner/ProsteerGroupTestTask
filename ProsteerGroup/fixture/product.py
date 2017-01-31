@@ -34,7 +34,7 @@ class Product:
 
     def add_to_cart(self):
         driver = self.app.driver
-        driver.find_element_by_css_selector("#right-panel-content-wrapper a.ga-add-to-cart").click()
+        driver.find_element_by_css_selector(".bottom a.product-button").click()
         time.sleep(1)
 
     def find_by_cod(self, productcod):
